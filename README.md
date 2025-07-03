@@ -74,7 +74,6 @@ mi-proyecto
 ├── package.json
 └── README.md
 ```
-```
 
 ---
 
