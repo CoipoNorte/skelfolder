@@ -1,0 +1,23 @@
+{
+  "name": "rfs",
+  "version": "1.0.0",
+  "description": "Lee la estructura de carpetas como árbol ASCII y guarda en Markdown",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "rfs": "./bin/rfs.js"
+  },
+  "scripts": {},
+  "keywords": [
+    "tree",
+    "folder",
+    "structure",
+    "markdown",
+    "cli"
+  ],
+  "author": "CoipoNorte",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^10.0.0"
+  }
+}
