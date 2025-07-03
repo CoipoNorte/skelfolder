@@ -1,11 +1,11 @@
 {
-  "name": "rfs",
+  "name": "skelfolder",
   "version": "1.0.0",
   "description": "Lee la estructura de carpetas como árbol ASCII y guarda en Markdown",
   "main": "index.js",
   "type": "module",
   "bin": {
-    "rfs": "./bin/rfs.js"
+    "skelfolder": "./bin/skelfolder.js"
   },
   "scripts": {},
   "keywords": [
@@ -13,7 +13,8 @@
     "folder",
     "structure",
     "markdown",
-    "cli"
+    "cli",
+    "skelfolder"
   ],
   "author": "CoipoNorte",
   "license": "MIT",

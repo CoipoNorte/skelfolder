@@ -1,6 +1,6 @@
-# rfs
+# skelfolder
 
-[![npm version](https://img.shields.io/npm/v/rfs.svg)](https://www.npmjs.com/package/rfs) [![license](https://img.shields.io/npm/l/rfs.svg)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/skelfolder.svg)](https://www.npmjs.com/package/skelfolder) [![license](https://img.shields.io/npm/l/skelfolder.svg)](./LICENSE)
 
 Lee la estructura de carpetas de tu proyecto y la muestra como un árbol ASCII en consola o la guarda en un archivo Markdown.
 
@@ -8,27 +8,27 @@ Lee la estructura de carpetas de tu proyecto y la muestra como un árbol ASCII e
 
 ## Instalación
 
-Instala **rfs** de forma global:
+Instala **skelfolder** de forma global:
 
 ```bash
-npm install -g rfs
+npm install -g skelfolder
 ```
 
 O añádelo como dependencia de desarrollo:
 
 ```bash
-npm install --save-dev rfs
+npm install --save-dev skelfolder
 ```
 
 ---
 
 ## Comandos
 
-- `rfs read [directorio]`  
+- `skelfolder read [directorio]`  
   Muestra en consola la estructura de carpetas en formato ASCII.  
   Si no se especifica `[directorio]`, usa el directorio actual.
 
-- `rfs save [directorio]`  
+- `skelfolder save [directorio]`  
   Genera un archivo `STRUCTURE.md` con la misma estructura en Markdown.  
   Si no se especifica `[directorio]`, usa el directorio actual.
 
@@ -39,13 +39,13 @@ npm install --save-dev rfs
 Mostrar la estructura de un proyecto:
 
 ```bash
-rfs read /ruta/a/mi-proyecto
+skelfolder read /ruta/a/mi-proyecto
 ```
 
 Guardar en `STRUCTURE.md`:
 
 ```bash
-rfs save /ruta/a/mi-proyecto
+skelfolder save /ruta/a/mi-proyecto
 ```
 
 ---

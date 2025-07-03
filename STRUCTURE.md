@@ -1,31 +1,14 @@
 ```plaintext
-RFS
+skelfolder
 ├── .gitignore
 ├── bin
-│   └── rfs.js
-├── chmod
+│   └── skelfolder.js
 ├── index.js
 ├── lib
 │   └── tree.js
-├── node_modules
-│   ├── .package-lock.json
-│   └── commander
-│       ├── esm.mjs
-│       ├── index.js
-│       ├── lib
-│       │   ├── argument.js
-│       │   ├── command.js
-│       │   ├── error.js
-│       │   ├── help.js
-│       │   ├── option.js
-│       │   └── suggestSimilar.js
-│       ├── LICENSE
-│       ├── package-support.json
-│       ├── package.json
-│       ├── Readme.md
-│       └── typings
-│           └── index.d.ts
+├── LICENSE
 ├── package-lock.json
 ├── package.json
-└── README.md
+├── README.md
+└── STRUCTURE.md
 ```
