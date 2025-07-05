@@ -93,3 +93,29 @@ export function removeExtension(ext) {
     console.log(`La extensión '${ext}' no estaba en la lista.`)
   }
 }
+
+/**
+ * Muestra por consola la lista de carpetas ignoradas.
+ */
+export function viewFolders() {
+  const { ignoreFolders } = loadConfig()
+  if (ignoreFolders.length === 0) {
+    console.log('No hay carpetas en la lista de ignoradas.')
+  } else {
+    console.log('Carpetas ignoradas:')
+    ignoreFolders.forEach(f => console.log('  -', f))
+  }
+}
+
+/**
+ * Muestra por consola la lista de extensiones ignoradas.
+ */
+export function viewExtensions() {
+  const { ignoreExtensions } = loadConfig()
+  if (ignoreExtensions.length === 0) {
+    console.log('No hay extensiones en la lista de ignoradas.')
+  } else {
+    console.log('Extensiones ignoradas:')
+    ignoreExtensions.forEach(e => console.log('  -', e))
+  }
+}

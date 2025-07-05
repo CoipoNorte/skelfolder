@@ -7,7 +7,9 @@ import {
   addFolder,
   removeFolder,
   addExtension,
-  removeExtension
+  removeExtension,
+  viewFolders,
+  viewExtensions
 } from '../index.js'
 
 const program = new Command()
@@ -57,6 +59,22 @@ program
   .description('Elimina una extensión de archivo de la lista de ignoradas')
   .action(ext => {
     removeExtension(ext)
+  })
+
+// Comando vf: muestra carpetas ignoradas
+program
+  .command('vf')
+  .description('Muestra la lista de carpetas ignoradas')
+  .action(() => {
+    viewFolders()
+  })
+
+// Comando ve: muestra extensiones ignoradas
+program
+  .command('ve')
+  .description('Muestra la lista de extensiones ignoradas')
+  .action(() => {
+    viewExtensions()
   })
 
 program.parse(process.argv)
