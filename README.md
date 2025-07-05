@@ -4,102 +4,72 @@
 
 Lee la estructura de carpetas de tu proyecto y la muestra como un árbol ASCII en consola o la guarda en un archivo Markdown.
 
----
-
 ## Instalación
 
-Instala **skelfolder** de forma global:
+Instala globalmente:
 
 ```bash
 npm install -g skelfolder
 ```
 
-O añádelo como dependencia de desarrollo:
+O como devDependency:
 
 ```bash
 npm install --save-dev skelfolder
 ```
 
----
-
 ## Comandos
 
 - `skelfolder read [directorio]`  
-  Muestra en consola la estructura de carpetas en formato ASCII.  
-  Si no se especifica `[directorio]`, usa el directorio actual.
+  Muestra en consola el árbol ASCII. Por defecto usa el directorio actual.
 
 - `skelfolder save [directorio]`  
-  Genera un archivo `STRUCTURE.md` con la misma estructura en Markdown.  
-  Si no se especifica `[directorio]`, usa el directorio actual.
+  Genera `STRUCTURE.md` con el árbol en Markdown. Por defecto usa el directorio actual.
 
----
+- `skelfolder af <carpeta>`  
+  Añade `<carpeta>` a la lista de carpetas ignoradas.
+
+- `skelfolder rf <carpeta>`  
+  Elimina `<carpeta>` de la lista de carpetas ignoradas.
+
+- `skelfolder ae <ext>`  
+  Añade una extensión (`.ext`) a la lista de archivos ignorados.
+
+- `skelfolder re <ext>`  
+  Elimina una extensión (`.ext`) de la lista de archivos ignorados.
+
+## Configuración
+
+Al ejecutar `af`, `rf`, `ae` o `re`, se crea o actualiza `skelfolder.config.json` en tu carpeta raíz. Ejemplo:
+
+```jsonc
+{
+  "ignoreFolders": [".git", "node_modules", "build"],
+  "ignoreExtensions": [".log", ".tmp"]
+}
+```
 
 ## Ejemplos
 
-Mostrar la estructura de un proyecto:
-
 ```bash
-skelfolder read /ruta/a/mi-proyecto
+# Mostrar árbol excluyendo .git y node_modules
+skelfolder read
+
+# Ignorar carpeta build
+skelfolder af build
+
+# Ignorar archivos .log
+skelfolder ae .log
+
+# Guardar estructura en Markdown
+skelfolder save
 ```
 
-Guardar en `STRUCTURE.md`:
+## Publicación
 
-```bash
-skelfolder save /ruta/a/mi-proyecto
-```
-
----
-
-## Salida de ejemplo
-
-```plaintext
-mi-proyecto
-├── src
-│   ├── index.js
-│   └── lib
-│       └── tree.js
-├── package.json
-└── README.md
-```
-
-En Markdown (archivo `STRUCTURE.md`):
-
-```markdown
-```plaintext
-mi-proyecto
-├── src
-│   ├── index.js
-│   └── lib
-│       └── tree.js
-├── package.json
-└── README.md
-```
-
----
-
-## Características
-
-- Recorrido síncrono rápido de carpetas
-- Salida limpia en consola con caracteres ASCII
-- Exportación automática a Markdown
-- Sin dependencias pesadas, solo [`commander`](https://www.npmjs.com/package/commander)
-
----
-
-## Contribuir
-
-1. Haz un fork del repositorio.  
-2. Crea una rama con tu mejora: `git checkout -b feature/nueva-opcion`.  
-3. Realiza tus cambios y pruebas.  
-4. Abre un pull request con descripción clara.
-
----
+1. `npm login`  
+2. `npm publish --access public`
 
 ## Licencia
 
-Este proyecto está bajo la licencia MIT.  
-Consulta el archivo [LICENSE](./LICENSE) para más detalles.
-
----
-
-© 2024 CoipoNorte
+MIT © CoipoNorte

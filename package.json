@@ -1,7 +1,7 @@
 {
   "name": "skelfolder",
-  "version": "1.0.0",
-  "description": "Lee la estructura de carpetas como árbol ASCII y guarda en Markdown",
+  "version": "1.0.1",
+  "description": "Lee la estructura de carpetas como árbol ASCII y la guarda en Markdown",
   "main": "index.js",
   "type": "module",
   "bin": {
@@ -14,9 +14,9 @@
     "structure",
     "markdown",
     "cli",
-    "skelfolder"
+    "skeleton"
   ],
-  "author": "CoipoNorte",
+  "author": "Cristian",
   "license": "MIT",
   "dependencies": {
     "commander": "^10.0.0"

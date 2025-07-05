@@ -1,26 +1,62 @@
 #!/usr/bin/env node
-import { Command } from 'commander';
-import { read, save } from '../index.js';
 
-const program = new Command();
+import { Command } from 'commander'
+import {
+  read,
+  save,
+  addFolder,
+  removeFolder,
+  addExtension,
+  removeExtension
+} from '../index.js'
+
+const program = new Command()
 
 program
-  .name('rfs')
+  .name('skelfolder')
   .description('Lee la estructura de carpetas y la muestra o guarda en Markdown')
-  .version('1.0.0');
+  .version('1.0.0')
 
 program
   .command('read [dir]')
   .description('Muestra el árbol de carpetas en consola')
-  .action((dir) => {
-    read(dir || process.cwd());
-  });
+  .action(dir => {
+    read(dir || process.cwd())
+  })
 
 program
   .command('save [dir]')
   .description('Guarda el árbol de carpetas en STRUCTURE.md')
-  .action((dir) => {
-    save(dir || process.cwd());
-  });
+  .action(dir => {
+    save(dir || process.cwd())
+  })
 
-program.parse(process.argv);
+program
+  .command('af <folder>')
+  .description('Añade una carpeta a la lista de carpetas ignoradas')
+  .action(folder => {
+    addFolder(folder)
+  })
+
+program
+  .command('rf <folder>')
+  .description('Elimina una carpeta de la lista de carpetas ignoradas')
+  .action(folder => {
+    removeFolder(folder)
+  })
+
+program
+  .command('ae <ext>')
+  .description('Añade una extensión de archivo a la lista de ignoradas')
+  .action(ext => {
+    addExtension(ext)
+  })
+
+program
+  .command('re <ext>')
+  .description('Elimina una extensión de archivo de la lista de ignoradas')
+  .action(ext => {
+    removeExtension(ext)
+  })
+
+program.parse(process.argv)

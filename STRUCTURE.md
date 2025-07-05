@@ -5,6 +5,7 @@ skelfolder
 │   └── skelfolder.js
 ├── index.js
 ├── lib
+│   ├── config.js
 │   └── tree.js
 ├── LICENSE
 ├── package-lock.json
