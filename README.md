@@ -18,7 +18,7 @@ O como devDependency:
 npm install --save-dev skelfolder
 ```
 
-## Comandos
+## Comandos y uso
 
 - `skelfolder read [directorio]`  
   Muestra en consola el árbol ASCII. Por defecto usa el directorio actual.
@@ -58,6 +58,30 @@ npm install --save-dev skelfolder
 
 - `skelfolder --help`  
   Muestra ayuda completa con todas las opciones y comandos disponibles.
+
+## Sintaxis de los comandos
+
+Los comandos se forman con dos letras:  
+- Primera letra (acción):  
+  - **a**: add  
+  - **r**: remove  
+  - **v**: view  
+- Segunda letra (objetivo):  
+  - **f**: folder  
+  - **e**: extension  
+  - **a**: archivo  
+
+| Comando | Acción  | Objetivo   | Descripción                                 | Ejemplo                                      |
+|---------|---------|------------|---------------------------------------------|----------------------------------------------|
+| af      | add     | folder     | Añade una carpeta a la lista de ignoradas   | `skelfolder af build`                        |
+| rf      | remove  | folder     | Elimina una carpeta de la lista de ignoradas| `skelfolder rf node_modules`                 |
+| vf      | view    | folder(s)  | Muestra las carpetas ignoradas              | `skelfolder vf`                              |
+| ae      | add     | extension  | Añade una extensión a la lista de ignores   | `skelfolder ae .log`                         |
+| re      | remove  | extension  | Elimina una extensión de la lista de ignores| `skelfolder re .tmp`                         |
+| ve      | view    | extension(s)| Muestra las extensiones ignoradas           | `skelfolder ve`                              |
+| aa      | add     | archivo    | Añade un archivo específico a ignorar       | `skelfolder aa package-lock.json`            |
+| ra      | remove  | archivo    | Elimina un archivo específico de ignores    | `skelfolder ra package-lock.json`            |
+| va      | view    | archivo(s) | Muestra los archivos específicos ignorados  | `skelfolder va`                              |
 
 ## Configuración
 
