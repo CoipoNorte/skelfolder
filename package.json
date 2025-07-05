@@ -1,6 +1,6 @@
 {
   "name": "skelfolder",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Lee la estructura de carpetas como árbol ASCII y la guarda en Markdown",
   "main": "index.js",
   "type": "module",
