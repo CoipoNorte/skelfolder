@@ -127,3 +127,45 @@ export function viewExtensions() {
 export function generate(mdFile, dest) {
   generateFromFile(mdFile, dest || process.cwd())
 }
+
+/**
+ * Añade un archivo (por nombre) a ignorar
+ */
+export function addFile(name) {
+  const cfg = loadConfig();
+  if (!cfg.ignoreFiles.includes(name)) {
+    cfg.ignoreFiles.push(name);
+    saveConfig(cfg);
+    console.log(`Archivo '${name}' añadido a ignorar.`);
+  } else {
+    console.log(`El archivo '${name}' ya estaba en la lista.`);
+  }
+}
+
+/**
+ * Elimina un archivo de la lista de ignores
+ */
+export function removeFile(name) {
+  const cfg = loadConfig();
+  const idx = cfg.ignoreFiles.indexOf(name);
+  if (idx !== -1) {
+    cfg.ignoreFiles.splice(idx, 1);
+    saveConfig(cfg);
+    console.log(`Archivo '${name}' eliminado de ignorar.`);
+  } else {
+    console.log(`El archivo '${name}' no estaba en la lista.`);
+  }
+}
+
+/**
+ * Muestra la lista de archivos ignorados
+ */
+export function viewFiles() {
+  const { ignoreFiles } = loadConfig();
+  if (ignoreFiles.length === 0) {
+    console.log('No hay archivos en la lista de ignorados.');
+  } else {
+    console.log('Archivos ignorados:');
+    ignoreFiles.forEach(f => console.log('  -', f));
+  }
+}

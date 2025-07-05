@@ -10,7 +10,10 @@ import {
   removeExtension,
   viewFolders,
   viewExtensions,
-  generate
+  generate,
+  addFile,
+  removeFile,
+  viewFiles
 } from '../index.js'
 
 const program = new Command()
@@ -85,5 +88,29 @@ program
   .action((md, dest) => {
     generate(md, dest)
   })
+
+// Comando aa: añade archivo a ignorar
+program
+  .command('aa <file>')
+  .description('Añade un archivo (por nombre) a la lista de ignorados')
+  .action(file => {
+    addFile(file);
+  });
+
+// Comando ra: quita archivo de ignorar
+program
+  .command('ra <file>')
+  .description('Elimina un archivo de la lista de ignorados')
+  .action(file => {
+    removeFile(file);
+  });
+
+// Comando va: ver archivos ignorados
+program
+  .command('va')
+  .description('Muestra la lista de archivos ignorados')
+  .action(() => {
+    viewFiles();
+  });
 
 program.parse(process.argv)

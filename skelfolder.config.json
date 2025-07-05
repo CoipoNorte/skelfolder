@@ -4,7 +4,9 @@
     "node_modules"
   ],
   "ignoreExtensions": [
-    ".md",
-    ".json"
+    ".md"
+  ],
+  "ignoreFiles": [
+    "package-lock.json"
   ]
 }
