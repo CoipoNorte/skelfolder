@@ -7,6 +7,7 @@ import {
   loadConfig,
   saveConfig
 } from './lib/config.js'
+import { generateFromFile } from './lib/generator.js'
 
 /**
  * Muestra en consola la estructura de carpetas.
@@ -118,4 +119,11 @@ export function viewExtensions() {
     console.log('Extensiones ignoradas:')
     ignoreExtensions.forEach(e => console.log('  -', e))
   }
+}
+
+/**
+ * CLI wrapper: skelfolder generate <md> [dest]
+ */
+export function generate(mdFile, dest) {
+  generateFromFile(mdFile, dest || process.cwd())
 }

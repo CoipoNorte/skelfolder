@@ -9,7 +9,8 @@ import {
   addExtension,
   removeExtension,
   viewFolders,
-  viewExtensions
+  viewExtensions,
+  generate
 } from '../index.js'
 
 const program = new Command()
@@ -75,6 +76,14 @@ program
   .description('Muestra la lista de extensiones ignoradas')
   .action(() => {
     viewExtensions()
+  })
+
+// Comando generate: crea estructura desde Markdown
+program
+  .command('generate <archivo.md> [dest]')
+  .description('Genera carpetas y archivos según el árbol definido en un Markdown')
+  .action((md, dest) => {
+    generate(md, dest)
   })
 
 program.parse(process.argv)
