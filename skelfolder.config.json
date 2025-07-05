@@ -1,8 +1,7 @@
 {
   "ignoreFolders": [
     ".git",
-    "node_modules",
-    "Nueva carpeta"
+    "node_modules"
   ],
   "ignoreExtensions": [
     ".md",
