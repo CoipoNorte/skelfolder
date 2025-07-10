@@ -16,7 +16,7 @@
     "cli",
     "skeleton"
   ],
-  "author": "Cristian",
+  "author": "CoipoNorte",
   "license": "MIT",
   "dependencies": {
     "commander": "^10.0.0"
