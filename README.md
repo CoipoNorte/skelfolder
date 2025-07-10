@@ -69,7 +69,7 @@ Los comandos se forman con dos letras:
 - Segunda letra (objetivo):  
   - **f**: folder  
   - **e**: extension  
-  - **a**: archivo  
+  - **a**: archive  
 
 | Comando | Acción  | Objetivo   | Descripción                                 | Ejemplo                                      |
 |---------|---------|------------|---------------------------------------------|----------------------------------------------|
@@ -79,8 +79,8 @@ Los comandos se forman con dos letras:
 | ae      | add     | extension  | Añade una extensión a la lista de ignores   | `skelfolder ae .log`                         |
 | re      | remove  | extension  | Elimina una extensión de la lista de ignores| `skelfolder re .tmp`                         |
 | ve      | view    | extension(s)| Muestra las extensiones ignoradas           | `skelfolder ve`                              |
-| aa      | add     | archivo    | Añade un archivo específico a ignorar       | `skelfolder aa package-lock.json`            |
-| ra      | remove  | archivo    | Elimina un archivo específico de ignores    | `skelfolder ra package-lock.json`            |
+| aa      | add     | archive    | Añade un archivo específico a ignorar       | `skelfolder aa package-lock.json`            |
+| ra      | remove  | archive    | Elimina un archivo específico de ignores    | `skelfolder ra package-lock.json`            |
 | va      | view    | archivo(s) | Muestra los archivos específicos ignorados  | `skelfolder va`                              |
 
 ## Configuración
