@@ -138,22 +138,22 @@ skelfolder generate plantilla.md ./nuevo-proyecto
 
 *por si lo olvido :(*
 
-1. Inicia sesión y verifica tu usuario en npm:
+1. Iniciar sesión y verificar el usuario en npm:
    ```bash
    npm login
    npm whoami
    ```
-2. Incrementa la versión según SemVer:
+2. Incrementar la versión según SemVer:
    ```bash
    npm version patch   # → 1.0.2
    npm version minor   # → 1.1.0
    npm version major   # → 2.0.0
    ```
-3. Publica en el registro público:
+3. Publicar en el registro público:
    ```bash
    npm publish --access public
    ```
-4. Verifica la nueva versión instalada globalmente:
+4. Verificar la nueva versión instalada globalmente siempre:
    ```bash
    npm install -g skelfolder
    skelfolder --version
