@@ -1,8 +1,11 @@
 # skelfolder
 
-[![npm version](https://img.shields.io/npm/v/skelfolder.svg)](https://www.npmjs.com/package/skelfolder) [![license](https://img.shields.io/npm/l/skelfolder.svg)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/skelfolder.svg)](https://www.npmjs.com/package/skelfolder)
+[![license](https://img.shields.io/npm/l/skelfolder.svg)](./LICENSE)
 
 Lee la estructura de carpetas de tu proyecto y la muestra como un árbol ASCII en consola, la guarda en un archivo Markdown o genera carpetas/archivos desde un esquema en Markdown.
+
+---
 
 ## Instalación
 
@@ -12,13 +15,25 @@ Instala globalmente:
 npm install -g skelfolder
 ```
 
-O como devDependency:
+O como dependencia de desarrollo:
 
 ```bash
 npm install --save-dev skelfolder
 ```
 
-## Comandos y uso
+---
+
+## Uso rápido
+
+```bash
+skelfolder read
+skelfolder save
+skelfolder generate estructura.md ./nuevo-proyecto
+```
+
+---
+
+## Comandos disponibles
 
 - `skelfolder read [directorio]`  
   Muestra en consola el árbol ASCII. Por defecto usa el directorio actual.
@@ -59,6 +74,8 @@ npm install --save-dev skelfolder
 - `skelfolder --help`  
   Muestra ayuda completa con todas las opciones y comandos disponibles.
 
+---
+
 ## Sintaxis de los comandos
 
 Los comandos se forman con dos letras:  
@@ -83,11 +100,13 @@ Los comandos se forman con dos letras:
 | ra      | remove  | archive    | Elimina un archivo específico de ignores    | `skelfolder ra package-lock.json`            |
 | va      | view    | archivo(s) | Muestra los archivos específicos ignorados  | `skelfolder va`                              |
 
+---
+
 ## Configuración
 
 Al ejecutar `af`, `rf`, `ae`, `re`, `aa` o `ra`, se crea o actualiza `skelfolder.config.json` en tu carpeta raíz con tres secciones:
 
-```jsonc
+```json
 {
   "ignoreFolders": [
     ".git",
@@ -109,7 +128,9 @@ Al ejecutar `af`, `rf`, `ae`, `re`, `aa` o `ra`, se crea o actualiza `skelfolder
 - `ignoreExtensions`: extensiones de archivo a omitir (incluye el punto).  
 - `ignoreFiles`: nombres exactos de archivos a omitir.
 
-## Ejemplos
+---
+
+## Ejemplos de uso
 
 ```bash
 # Mostrar árbol excluyendo .git y node_modules
@@ -134,6 +155,36 @@ skelfolder save
 skelfolder generate plantilla.md ./nuevo-proyecto
 ```
 
+---
+
+## Generar estructura desde Markdown
+
+El comando `generate` espera un archivo Markdown con un bloque de código tipo `plaintext` que describe la estructura.  
+Ejemplo de bloque válido en `estructura.md`:
+
+<details>
+<summary>Ejemplo de bloque <code>plaintext</code></summary>
+
+```plaintext
+mi-proyecto
+├── src
+│   ├── index.js
+│   └── utils.js
+├── README.md
+└── package.json
+```
+</details>
+
+---
+
+## Troubleshooting
+
+- Si ves errores de permisos, ejecuta el comando con permisos adecuados o revisa la ruta.
+- Si el árbol no muestra lo esperado, revisa tu `skelfolder.config.json`.
+- Si tienes problemas con rutas relativas, usa rutas absolutas.
+
+---
+
 ## Publicación
 
 *por si lo olvido :(*
@@ -153,11 +204,13 @@ skelfolder generate plantilla.md ./nuevo-proyecto
    ```bash
    npm publish --access public
    ```
-4. Verificar la nueva versión instalada globalmente siempre:
+4. Verificar la nueva versión instalada globalmente:
    ```bash
    npm install -g skelfolder
    skelfolder --version
    ```
+
+---
 
 ## Licencia
 
